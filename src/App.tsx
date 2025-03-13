@@ -5,9 +5,8 @@ import Chart from "./components/Chart";
 
 
 const App = () => {
-  // const inputRef = useRef<any>(null)
   const [filteredProducts, setFilteredProducts] = useState<any>(
-    [...productData].sort((a, b) => parseInt(b.id) - parseInt(a.id)) // Sort by numeric id
+    [...productData].sort((a, b) => parseInt(b.id) - parseInt(a.id)) 
   );
   
   const [selectedColor, setSelectedColor] = useState<string>("");
