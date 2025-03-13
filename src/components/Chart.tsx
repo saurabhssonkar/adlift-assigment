@@ -12,11 +12,11 @@ const Chart = ({capacityData,colorData}:any) => {
  
   return (
     
-    <div className="grid grid-cols-2 gap-0 mt-6">
+    <div className="grid grid-cols-1 md:grid-cols-2 md:gap-6 gap-6 mt-6">
     <div>
     <h2 className="text-xl font-semibold mb-2">Product Distribution by Color</h2>
       {colorData.length ? <><ResponsiveContainer width={400} height={200}>
-          <BarChart data={colorData} margin={{ top: 10, right: 30, left: 0, bottom: 33 }}>
+          <BarChart data={colorData} margin={{ top: 10, right: 100, left: 0, bottom: 33 }}>
             <CartesianGrid strokeDasharray="" />
             <XAxis dataKey="name" angle={-45} textAnchor="end" height={50} />
             <YAxis />

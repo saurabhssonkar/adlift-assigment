@@ -95,12 +95,12 @@ const App = () => {
   };
   
   return (
-    <div className="p-6 max-w-4xl mx-auto">
+    <div className="p-6  min-h-screen max-w-4xl mx-auto">
       <h1 className="text-2xl font-bold text-center">Product Listing with Charts</h1>
-      <form onSubmit={handleSubmit} className="flex space-x-2 mb-4 mt-4 ">
+      <form onSubmit={handleSubmit} className=" grid md:flex grid-cols-2 gap-1 space-x-2 mb-4 mt-4  ">
         <input type="text" onChange={handleProduct} value={formData.name} name="name" className="border px-4 py-2 focus:outline-blue-500"  placeholder="Product Name" required />
         <input type="text" onChange={handleJsonData} value={formData.data}  name="data" className="border px-4 py-2 focus:outline-blue-500" placeholder="Product Data (JSON)" />
-        <button type="submit" className="border px-2 bg-gray-200 border-gray-400 rounded-sm  ">Add Product</button>
+        <button type="submit" className="border md:px-2 px-4 py-2 bg-gray-200 border-gray-400 rounded-sm  ">Add Product</button>
       </form>
       <div className="flex gap-4 my-4">
         <select
