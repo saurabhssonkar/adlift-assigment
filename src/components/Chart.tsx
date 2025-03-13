@@ -1,7 +1,7 @@
 import { BarChart, Bar, XAxis, YAxis, Tooltip, PieChart, Pie, Cell, Legend, ResponsiveContainer, CartesianGrid } from "recharts";
 import CustomLegend from './CustomLegend';
 
-const colors = ["#0088FE", "#00C49F", "#FFBB28", "#FF8042"];
+const colors = ["#33a2eb", "#4ac1c0", "#fe6284", "#fece54"];
 
 
 const Chart = ({capacityData,colorData}:any) => {
@@ -16,7 +16,7 @@ const Chart = ({capacityData,colorData}:any) => {
     <div>
     <h2 className="text-xl font-semibold mb-2">Product Distribution by Color</h2>
       {colorData.length ? <><ResponsiveContainer width={400} height={200}>
-          <BarChart data={colorData} margin={{ top: 10, right: 30, left: 0, bottom: 20 }}>
+          <BarChart data={colorData} margin={{ top: 10, right: 30, left: 0, bottom: 33 }}>
             <CartesianGrid strokeDasharray="" />
             <XAxis dataKey="name" angle={-45} textAnchor="end" height={50} />
             <YAxis />

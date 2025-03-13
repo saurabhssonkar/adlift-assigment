@@ -5,7 +5,7 @@ import Chart from "./components/Chart";
 
 
 const App = () => {
-  const inputRef = useRef<any>(null)
+  // const inputRef = useRef<any>(null)
   const [filteredProducts, setFilteredProducts] = useState<any>(
     [...productData].sort((a, b) => parseInt(b.id) - parseInt(a.id)) // Sort by numeric id
   );
@@ -16,7 +16,6 @@ const App = () => {
 
 
   useEffect(() => {
-    inputRef.current.focus();
     let filtered = productData.filter((p) => {
       const colorMatch = selectedColor ? p.data?.color === selectedColor : true;
       const capacityMatch = selectedCapacity ? p.data?.capacity === selectedCapacity : true;
@@ -99,14 +98,14 @@ const App = () => {
   return (
     <div className="p-6 max-w-4xl mx-auto">
       <h1 className="text-2xl font-bold text-center">Product Listing with Charts</h1>
-      <form onSubmit={handleSubmit} className="flex space-x-2 mb-4 mt-4">
-        <input type="text" onChange={handleProduct} value={formData.name} name="name" className="border px-4 py-2" ref={inputRef} placeholder="Product Name" required />
-        <input type="text" onChange={handleJsonData} value={formData.data}  name="data" className="border px-4 py-2" placeholder="Product Data (JSON)" />
-        <button type="submit" className="border px-2 bg-gray-200 border-gray-400 rounded-sm ">Add Product</button>
+      <form onSubmit={handleSubmit} className="flex space-x-2 mb-4 mt-4 ">
+        <input type="text" onChange={handleProduct} value={formData.name} name="name" className="border px-4 py-2 focus:outline-blue-500"  placeholder="Product Name" required />
+        <input type="text" onChange={handleJsonData} value={formData.data}  name="data" className="border px-4 py-2 focus:outline-blue-500" placeholder="Product Data (JSON)" />
+        <button type="submit" className="border px-2 bg-gray-200 border-gray-400 rounded-sm  ">Add Product</button>
       </form>
       <div className="flex gap-4 my-4">
         <select
-          className="border p-2"
+          className="border p-2 focus:outline-blue-500"
           onChange={(e) => setSelectedColor(e.target.value)}
         >
           <option value="">Filter by Color</option>
@@ -117,7 +116,7 @@ const App = () => {
           ))}
         </select>
         <select
-          className="border p-2"
+          className="border p-2 focus:outline-blue-500"
           onChange={(e) => setSelectedCapacity(e.target.value)}
         >
           <option value="">Filter by Capacity</option>
